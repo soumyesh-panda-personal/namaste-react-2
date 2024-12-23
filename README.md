@@ -5,4 +5,22 @@
 5. To add the files or stage - git add .
 6. To commit - git commit -m "<commit msg>"
 7. To push - git push
+8. creating package -: 
+9. command - npm init
+10. then follow the steps as is said.
+11. need to install a bundler - we will use 'parcel' - command - npm install -D parcel --> This means, we install as a dev dependency. Needed for development.
+12. node_modules got generated
+13. Created a .gitignore file, and added /node_modules in to it. This will ignore while commiting code.
+14. Must commit package and package-lock json. Only these are needed to recreate the entire node_modules.
+15. Install react and react-dom - npm install react and npm install react-dom
+16. Need to add type=module in <script type=module src="./App.js"></script> // because react import is not a normal file, its a module from the node_modules.
+16. Now we can run command - npx parcel index.html --> This will run the server with source file index.html and upload the code, give a dev build.
+17. we can put this script in package json -:
+"scripts": {
+    "start": "parcel index.html", // This will give a dev build.
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+18. To start the project, command - npm run start OR npm start
+19. Episode 3, 12th minute, the project starts from scratch.
   
