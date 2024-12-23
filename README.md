@@ -23,4 +23,6 @@
   },
 18. To start the project, command - npm run start OR npm start
 19. Episode 3, 12th minute, the project starts from scratch.
+20. JSX / react element - This is kind of a convention of clubing html and js. Its a HTML or XML like syntax. This is not writting HTML in js
+21. stopped at 1:04:17 of EP3
   
