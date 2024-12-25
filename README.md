@@ -25,4 +25,12 @@
 19. Episode 3, 12th minute, the project starts from scratch.
 20. JSX / react element - This is kind of a convention of clubing html and js. Its a HTML or XML like syntax. This is not writting HTML in js
 21. stopped at 1:04:17 of EP3
+22. component - class based and functional component
+23. functional component is nothing but a normal JS fucntional which returns some JSX
+24. to render a func component, we enclose with in </> eg. <Heading/>
+25. component composition
+26. with in {} , we can code any JS expression with in component.
+27. JSx sanitizes the data sent through the js expression code with in {}. So the malicious data injection gets prevented.
+28. EP-4 -:
+29. 
   
