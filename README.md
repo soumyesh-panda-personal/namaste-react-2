@@ -35,4 +35,7 @@
 29. resturant structure
 30. Props - just arguments to a function/component
 31. passing props and using it
-  
+32. Config driven UI-> controlling the UI of the web based on the config/data. A ques on the system design interview.
+33. copied the swiggy API for restaurnat list and put the array of object of restaurant list here -:
+https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.989770900513944&lng=77.694921495487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+34.  
