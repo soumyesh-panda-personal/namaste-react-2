@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+.justify-center{
+    justify-content: center;
+}
+.logoContainer {
+    width: 100px;
+    height: 100px;
+}
+img {width: 100%; height: 100%;}
+.d-flex{display: flex;}
+ul li {list-style: none;margin: 5px;padding: 5px;}
+.w-100 {width: 100%;}
+.t-center {text-align: center;}
+.mtb-10 {margin: 10px 0;}
+.m-10{margin: 10px 10px;}
+.p-10{padding: 10px;}
+.res-card-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    width: 15%;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid silver;
+    padding: 5px;
+    align-items: center;
+    margin-right: 10px;
+}
+.res-img {
+    width: 100%;
+    height: 150px;
+}
+.shimmer-cards {
+    height: 270px;
+    background-color: lightgrey;
+}
+button {
+    width: 100px;
+    border: 1px solid cornflowerblue;
+    color: blue;
+    cursor: pointer;
+}
+.mr-10{margin-right: 10px;}
+.card-items {
+    width: 100%;
+    text-align: left;
+}
