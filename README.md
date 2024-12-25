@@ -31,7 +31,7 @@
 25. component composition
 26. with in {} , we can code any JS expression with in component.
 27. JSx sanitizes the data sent through the js expression code with in {}. So the malicious data injection gets prevented.
-28. EP-4 -:
+28. ## EP-4 -:
 29. resturant structure
 30. Props - just arguments to a function/component
 31. passing props and using it
@@ -41,4 +41,10 @@ https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.989770900513944&lng=77.69
 34. Now we use JS map() to iterate over the array of objects. -- map(), filter(), reduce() - read from here - https://www.youtube.com/watch?v=zdp0zrpKzIE
 35. Always pass a key to the map(). WHY -> Coz this helps react to uniquely identify the Array list items, so that in case of any updation, it doesn't have to re-render all the list items. This drastically increases the performance of the fo the project.
 ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
-36.  
+36. ## EP-5 -:
+37. file and folder structure
+38. keeping components in to components folder.
+39. Exporting the component and importing in the file where we intend to use it.
+40. Keep the constants (eg. urls or CDNs) in separate file. Like wise for data.
+41. 2 types of export - default and named export. One file can have only one default export. In case of multiple, use named export.
+42. Named export is nothing but adding the keyword "export" in front of it.
