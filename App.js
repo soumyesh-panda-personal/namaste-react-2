@@ -963,9 +963,12 @@ const Body = () => {
                 <input type="text" className="search-box mr-10"></input>
             </div>
             <div className="res-container res-card-wrapper d-flex">
-                <RestaurantCard resData = {resList[0]}/>
-                <RestaurantCard resData = {resList[1]}/>
-                <RestaurantCard resData = {resList[2]}/>
+                {/*using map() to iterate over each restaurant object with in the array*/}
+                {
+                    resList.map((restaurant) => (
+                        <RestaurantCard key = {restaurant.info.id} resData={restaurant}/>
+                    ))
+                }
             </div>
         </div>
     )

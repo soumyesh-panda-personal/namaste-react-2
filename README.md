@@ -38,4 +38,7 @@
 32. Config driven UI-> controlling the UI of the web based on the config/data. A ques on the system design interview.
 33. copied the swiggy API for restaurnat list and put the array of object of restaurant list here -:
 https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.989770900513944&lng=77.694921495487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
-34.  
+34. Now we use JS map() to iterate over the array of objects. -- map(), filter(), reduce() - read from here - https://www.youtube.com/watch?v=zdp0zrpKzIE
+35. Always pass a key to the map(). WHY -> Coz this helps react to uniquely identify the Array list items, so that in case of any updation, it doesn't have to re-render all the list items. This drastically increases the performance of the fo the project.
+ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
+36.  
