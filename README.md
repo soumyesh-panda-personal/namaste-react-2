@@ -32,5 +32,7 @@
 26. with in {} , we can code any JS expression with in component.
 27. JSx sanitizes the data sent through the js expression code with in {}. So the malicious data injection gets prevented.
 28. EP-4 -:
-29. 
+29. resturant structure
+30. Props - just arguments to a function/component
+31. passing props and using it
   
