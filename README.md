@@ -48,3 +48,7 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 40. Keep the constants (eg. urls or CDNs) in separate file. Like wise for data.
 41. 2 types of export - default and named export. One file can have only one default export. In case of multiple, use named export.
 42. Named export is nothing but adding the keyword "export" in front of it.
+43. React hooks - these are normal JS function or utility functions given by react
+44. 2 most importantly used hooks -:
+45. useState and useEffect
+45. useState = When ever a state variable changes/updates, react re-renders the component.
