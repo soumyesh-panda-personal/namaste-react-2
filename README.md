@@ -54,3 +54,8 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 45. useState = When ever a state variable changes/updates, react re-renders the component.
 46. In EP5 - at 2:00Hr, there is detailed explanation of the 2 arguments of useState hook.
 47. This episode covers - reconcilliation algorithm, diff algorithm, react fibre, virtual DOM concepts.
+48. ## EP-6 -:
+49. Monolith architecture
+50. Micro services. Separation of concerns or Single responsibility principle.
+51. useEffect hook - 2 argument - 1. callback function, dependency array. UE call back happens only after the component is rendered.
+52. 
