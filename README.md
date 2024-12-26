@@ -52,3 +52,5 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 44. 2 most importantly used hooks -:
 45. useState and useEffect
 45. useState = When ever a state variable changes/updates, react re-renders the component.
+46. In EP5 - at 2:00Hr, there is detailed explanation of the 2 arguments of useState hook.
+47. This episode covers - reconcilliation algorithm, diff algorithm, react fibre, virtual DOM concepts.
