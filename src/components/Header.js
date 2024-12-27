@@ -1,6 +1,10 @@
 import { LOGO_URL } from "../utils/contants";
+import { useState } from "react";
 
 const Header = () => {
+    //using state variable we re-render the component to show login and logout text based on click.
+    const [loggedState, setloggedState] = useState("LogIn");
+
     return (
         <div className="header d-flex">
         <div className="logoContainer">
@@ -12,6 +16,13 @@ const Header = () => {
                 <li>About us</li>
                 <li>Contact Us</li>
                 <li>Cart</li>
+                <button className="loginbtn"
+                    onClick={()=>{
+                        loggedState === "LogIn" ? setloggedState("LogOut") : setloggedState("LogIn");
+                    }}
+                >
+                    {loggedState}
+                </button>
             </ul>
         </div>
     </div>

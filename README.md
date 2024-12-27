@@ -58,4 +58,6 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 49. Monolith architecture
 50. Micro services. Separation of concerns or Single responsibility principle.
 51. useEffect hook - 2 argument - 1. callback function, dependency array. UE call back happens only after the component is rendered.
-52. 
+52. In useState, we declare the initial variable with 'const', but we change it through the set() ? Because, when the value is changed, react re-renders the entire component, hence the varriable is newly created. Its not changing it, rather creating a new variable,hence it works. All this is handled by react iteself. ***IMP***
+53. Search functionality - use diff state variable to render the search results to populate instead of using the initial state variable.
+54. login and logout button using state variable.
