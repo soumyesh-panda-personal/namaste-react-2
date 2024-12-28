@@ -61,3 +61,11 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 52. In useState, we declare the initial variable with 'const', but we change it through the set() ? Because, when the value is changed, react re-renders the entire component, hence the varriable is newly created. Its not changing it, rather creating a new variable,hence it works. All this is handled by react iteself. ***IMP***
 53. Search functionality - use diff state variable to render the search results to populate instead of using the initial state variable.
 54. login and logout button using state variable.
+55. ## EP-7 -:
+56. Be aware of some important pointers of useEffect and useState hooks.
+57. Routers 
+58. RAFCE and press enter in VS code, then it would create a boiler plate component for us. This is a shortcut.
+59. In react19, we need to use react-router library
+60. Using createBrowserRouter to create routes and then using routerProvider to provide configs to the routes.
+61. errorElement config in createBrowserRouter.
+62. useRouterError hook usage - Used to get the error information.
