@@ -2,9 +2,9 @@
 #  1. Created folder and opened it in VS - namaste-react2
 2. Created a repository in github and then through VS cloned it through https and pointed it to the folder created in step 1
 3. Changed branch - git branch -M main
-5. To add the files or stage - git add .
+5. To add the files or stage - <git add .>
 6. To commit - git commit -m "<commit msg>"
-7. To push - git push
+7. To push - <git push>
 8. creating package -: 
 9. command - npm init
 10. then follow the steps as is said.
@@ -69,3 +69,13 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 60. Using createBrowserRouter to create routes and then using routerProvider to provide configs to the routes.
 61. errorElement config in createBrowserRouter.
 62. useRouterError hook usage - Used to get the error information.
+63. Having the router page come with header and footer. This is possible using {outlet} from react-router
+64. Using link from react-router to navigate to diff routes or pages with out page refresh.
+65. This at point num 64, we read about the concept of Single Page Application.
+66. 2 types of routing in webApps - 1> Client side routing, 2> Server side routing.
+1> Client-side routing - We make a call to a new html from source html file. That will come and load in the page. This doen't
+make any network call, since all the components are loaded during the initial page load. On link call, just that component comes
+and sit over here.
+2> Server side routing - Here we make a network call, fetch the data and put on those data in to this page. So the entire page reloads.
+67. Hence Single page Application is nothing but, client side routing.
+68. 
