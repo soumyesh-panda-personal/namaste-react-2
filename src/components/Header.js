@@ -1,6 +1,6 @@
 import { LOGO_URL } from "../utils/contants";
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     //using state variable we re-render the component to show login and logout text based on click.

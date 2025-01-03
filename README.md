@@ -78,4 +78,5 @@ make any network call, since all the components are loaded during the initial pa
 and sit over here.
 2> Server side routing - Here we make a network call, fetch the data and put on those data in to this page. So the entire page reloads.
 67. Hence Single page Application is nothing but, client side routing.
-68. 
+68. Created RestaurantMenu component - A page which shows the menu of the restaurant selected. This will call the API and have the resid passed to it. Used useEffect hook for API call, useState hook to iterate over the menu, useParam hook to fetch the parameter passed through url eg: resID from App js file. Took the API and put it in constant js. fetching it through MENU_API const.
+69. In Body component, used Link To from react-router-dom to link the restaurant card to the respective menu page uplon clicking it and passing the restaurant id through param.

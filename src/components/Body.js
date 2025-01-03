@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const[listOfRestaurant, setlistOfRestaurant]=useState([]);
@@ -47,9 +48,10 @@ const Body = () => {
                 >Search</button>
             </div>
             <div className="res-container res-card-wrapper d-flex">
+                {/*Using Link to from react-router-dom,our res cards are now clickable and wud link to restaurant page by passing the resid to fetch data dynamically.*/}
                 {
                     filteredSearch.map((restaurant) => (
-                        <RestaurantCard key = {restaurant.info.id} resData={restaurant}/>
+                        <Link to={"/restaurant/" + restaurant.info.id} key = {restaurant.info.id} className="card d-flex"><RestaurantCard resData={restaurant}/></Link>
                     ))
                 }
             </div>

@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
         avgRating,
     } = resData?.info;
     return (
-        <div className="d-flex w-100 mtb-10 card">
+        <div className="w-100 mtb-10">
             <img 
                 className="res-img"
                 src={CDN_URL_RES_IMG + cloudinaryImageId}
