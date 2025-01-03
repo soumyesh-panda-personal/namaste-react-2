@@ -80,3 +80,20 @@ and sit over here.
 67. Hence Single page Application is nothing but, client side routing.
 68. Created RestaurantMenu component - A page which shows the menu of the restaurant selected. This will call the API and have the resid passed to it. Used useEffect hook for API call, useState hook to iterate over the menu, useParam hook to fetch the parameter passed through url eg: resID from App js file. Took the API and put it in constant js. fetching it through MENU_API const.
 69. In Body component, used Link To from react-router-dom to link the restaurant card to the respective menu page uplon clicking it and passing the restaurant id through param.
+70. ## EP - 8 -:
+71. class component - In class based component-import React. use the keyword "class", give a name to component, this extends from react component so react know its a component.It has a render(), with in this we have the same return which returns a piece of JSX. At the end we export it.
+72. creating a local state variable in class based component.
+73. state variables are created with in the constructor.
+74. Updating state variable is done through this.setState({}). It takes multiple object, where we can update the respective state variables. 
+75. calling a class component with in a class component.
+76. componentDidMount() and life cycle of class component.
+77. Hirarchy of calls in class component -:
+    constructor called  ---> render get called
+78. if componentDidMount() is there, then it becomes -:
+    constructor called  ---> render gets called ---> componentDidmount()
+79. In case when a class component is called with in a class component then -:
+--  Parent constructor --> parent render --> child constructor --> child render --> child componentDidMount --> Parent componentDidMount.
+
+80. #Above is the lifecycle.
+81. Inside componentDidMount - we make the API call. Similarly how we do API call inside the useEffect() hook incase of functional component. So why we do it in DidMount -- because, we first load the component, and once it is loaded succesfully we make the API call and fetch the data.
+    

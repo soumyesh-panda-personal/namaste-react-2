@@ -13,14 +13,13 @@ const RestaurantMenu = () => {
     const fetchData = async () => {
         const data = await fetch(MENU_API + resId);
         const json = await data.json();
-        console.log(json);
         setrestaurantInfo(json.data);
     }
 
     if (restaurantInfo === null) {
         return <Shimmer/>;
     }
-    console.log("entered");
+
     const {name, costForTwoMessage, cloudinaryImageId, cuisines,} = restaurantInfo?.cards[2]?.card.card.info;
     const {itemCards} = restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
     
