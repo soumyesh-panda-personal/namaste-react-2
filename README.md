@@ -87,13 +87,19 @@ and sit over here.
 74. Updating state variable is done through this.setState({}). It takes multiple object, where we can update the respective state variables. 
 75. calling a class component with in a class component.
 76. componentDidMount() and life cycle of class component.
+****Above is the lifecycle -: ****
 77. Hirarchy of calls in class component -:
     constructor called  ---> render get called
 78. if componentDidMount() is there, then it becomes -:
     constructor called  ---> render gets called ---> componentDidmount()
 79. In case when a class component is called with in a class component then -:
 --  Parent constructor --> parent render --> child constructor --> child render --> child componentDidMount --> Parent componentDidMount.
-
-80. #Above is the lifecycle.
-81. Inside componentDidMount - we make the API call. Similarly how we do API call inside the useEffect() hook incase of functional component. So why we do it in DidMount -- because, we first load the component, and once it is loaded succesfully we make the API call and fetch the data.
+80. **Inside componentDidMount** - we make the API call. Similarly how we do API call inside the useEffect() hook incase of functional component. So why we do it in DidMount -- because, we first load the component, and once it is loaded succesfully we make the API call and fetch the data.
+81. React life cycle method diagram website for udnerstanding -- [click me](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+82. ###lifecycle flow in case of **multiple child** component with in a component -:###
+83. parent constructor - parent render --> Child(1) constructor - child(1) render --> child(n) constructor - child(n) render
+    --> parent componentDidMount -->child(1) componentDidMount -->child(n) componentDidMount
+84. constructor + render = collaboratively is termed as the render phase. --> **This is very fast**
+85. componentDidMount = is termed as the commit phase. --> **This is expensive and takes time.Just like API calls**
+86. Hence first react does the render phase first and then the commit phase. **This is the reason, React works so fast.**
     
