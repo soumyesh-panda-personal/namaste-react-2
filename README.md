@@ -87,7 +87,7 @@ and sit over here.
 74. Updating state variable is done through this.setState({}). It takes multiple object, where we can update the respective state variables. 
 75. calling a class component with in a class component.
 76. componentDidMount() and life cycle of class component.
-****Above is the lifecycle -: ****
+****Below is the lifecycle -: ****
 77. Hirarchy of calls in class component -:
     constructor called  ---> render get called
 78. if componentDidMount() is there, then it becomes -:
@@ -101,5 +101,34 @@ and sit over here.
     --> parent componentDidMount -->child(1) componentDidMount -->child(n) componentDidMount
 84. constructor + render = collaboratively is termed as the render phase. --> **This is very fast**
 85. componentDidMount = is termed as the commit phase. --> **This is expensive and takes time.Just like API calls**
-86. Hence first react does the render phase first and then the commit phase. **This is the reason, React works so fast.**
-    
+86. Hence first react does the render phase and then the commit phase. **This is the reason, React works so fast.**
+87. Doing an API call from componentDidMount from the class component.
+88. create a local state variable with in class component. Updating the state variable using this.setState. Destructured the state variable data and rendered it.
+89. **COMPONENT life cycle Methods**
+90. /***
+****Mounting cycle -:
+-- constructor gets called
+-- Render() gets called
+-- [Here our initial data loads]
+-- Component Did Mount gets called
+-- [API call happens here]
+-- [this.setState is called here and state varaible is updated]
+**** Update cycle
+-- render() called with API data and the HTML loads
+-- Then it calls componentDidUpdate()
+*
+*
+*
+/
+91. componentWillUnmount() - This will get called, when you leave the current page/component. *For example*, lets call a setInterval() in which we pass function to be called after each second. Then it will be recursive. We also need to clear it, so that clearInterval() for the same, we shall write in the componentWillUnmount().
+92. **IMP logic for UseEffect hook** --> In case of functional component, if we need to call clearInterval for the setInterval(), we call it with in return of useEffect hook. Code eg:
+->  useEffect( () => {
+    const timer = setInterval(()=> {
+        console.log("call recursively");
+    }, 1000);
+
+    return () => {
+        console.log("return from useEffect()")
+        clearInterval(timer);
+    }
+})

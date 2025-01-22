@@ -13,36 +13,45 @@ class UserClass extends React.Component {
     constructor(props){
         super(props);
 
-        //creation of state through constructor
+        //Will create a local state variable and update it below based on API call.
         this.state = {
-            count: 0
+            userInfo : {
+                name : "dummy name",
+                location: "default location"
+            }
         }
         console.log("child constructor");
     }
 
+    // making an API call
+    async componentDidMount() {
+        var data = await fetch("https://api.github.com/users/soumyesh-panda-personal");
+        var json = await data.json();
+        console.log(json);
+        console.log("didmount parent called");
+
+        //updating state variable
+        this.setState({
+            userInfo: json
+        });
+    }
+
     componentDidMount() {
-        console.log("child did mount");
+        console.log("did mount called");
+    }
+
+    componentWillUnmount() {
+        console.log("will unmount called")
     }
 
     render(){
-        //Also we can destruture the props -:
-        const {name, location} = this.props;
-        const {count} = this.state; // Destructuring the state variable.
+        //Also we can destruture the state variable data -:
+        const {login, location} = this.state.userInfo;
         console.log("child render");
         return (
             <div className="card user-card">
-                <h1> This is s the state variable data - {count}</h1>
-                <button onClick={()=>{
-                    // Never update state variable directly
-                    //setState will take multiple object, where we can update the state variables.
-                    this.setState({
-                        count : this.state.count + 1
-                    });
-                }}>
-                    click to increase count
-                </button>
-                <h2>Name: {this.props.name}</h2> {/*used normal way*/} 
-                <h3>Location: {location}</h3> {/*used the destructred object*/}
+                <h2>Name: {login}</h2>
+                <h3>Location: {location}</h3>
                 <h4>Contact: twitter</h4>
             </div>
         );
