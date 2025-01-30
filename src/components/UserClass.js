@@ -28,16 +28,12 @@ class UserClass extends React.Component {
         var data = await fetch("https://api.github.com/users/soumyesh-panda-personal");
         var json = await data.json();
         console.log(json);
-        console.log("didmount parent called");
+        console.log("didmount class parent called");
 
         //updating state variable
         this.setState({
             userInfo: json
         });
-    }
-
-    componentDidMount() {
-        console.log("did mount called");
     }
 
     componentWillUnmount() {

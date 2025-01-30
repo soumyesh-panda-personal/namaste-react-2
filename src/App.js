@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDom from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import {useRouteError} from "react-router"
@@ -8,6 +8,9 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
+//import Grocery from "./components/Grocery";
+
+const Grocery = lazy(() => import("./components/Grocery"))
 
 const AppLayout = () => {
   return (
@@ -35,6 +38,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/cu",
         element: <ContactUs/>
+      },
+      {
+        path: "Gro",
+        /*We need to wrap our component within Suspense component so that it will get called with lazy as a separate on demand call*/
+        element: (<Suspense fallback={<h2>Loading...</h2>}>
+            <Grocery/>
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:resId",

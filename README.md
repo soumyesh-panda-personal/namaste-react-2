@@ -106,19 +106,18 @@ and sit over here.
 88. create a local state variable with in class component. Updating the state variable using this.setState. Destructured the state variable data and rendered it.
 89. **COMPONENT life cycle Methods**
 90. /***
-****Mounting cycle -:
+**A.Mounting cycle** -:
 -- constructor gets called
 -- Render() gets called
 -- [Here our initial data loads]
 -- Component Did Mount gets called
 -- [API call happens here]
 -- [this.setState is called here and state varaible is updated]
-**** Update cycle
+**B.Update cycle**
 -- render() called with API data and the HTML loads
 -- Then it calls componentDidUpdate()
-*
-*
-*
+**C.Unmount cycle**
+-- componentWillUnmount()
 /
 91. componentWillUnmount() - This will get called, when you leave the current page/component. *For example*, lets call a setInterval() in which we pass function to be called after each second. Then it will be recursive. We also need to clear it, so that clearInterval() for the same, we shall write in the componentWillUnmount().
 92. **IMP logic for UseEffect hook** --> In case of functional component, if we need to call clearInterval for the setInterval(), we call it with in return of useEffect hook. Code eg:
@@ -132,3 +131,18 @@ and sit over here.
         clearInterval(timer);
     }
 })
+93. ## EP - 9 - Optimizing the app
+94. Creating a **custom hook** - created useRestaurantMenu() custom hook. We just took the code from RestaurantMenu.js component file
+- The useState code and API fetching code, and useEffect from RestaurantMenu js file and created the hook. Exported it and imported the same in RestaurantMenu.js
+95. Created a custom hook to check the users online/offline status and imported it in body component.
+96. It is not mandate or syntax definition that we need to write 'use' in front of a hook. But this is a highly recommended way from react docs to do so. This is a indutry convention which the library suggests.
+97. **Breaking down the code in to smaller pieces** (Below are various names for the same)-:
+- code chunking
+- code splitting
+- Dynamic bundling
+- Lazy loading
+- On demand loading
+- Dynamic import
+98. For these, we need to import "lazy" and a named component "Suspense" from react.
+99. with help of lazy - our component will only get loaded when needed and not with the page load.
+100. We can also pass a fallback to <Suspense> component. Till our grocery page loads, it will show what ever we pass in the fallback. We can pass any component, lets say ever shimmerUI in to it. Because, fallback takes a jsx.

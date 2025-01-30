@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const[listOfRestaurant, setlistOfRestaurant]=useState([]);
@@ -19,6 +20,12 @@ const Body = () => {
         setlistOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredSearch(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
+    const userOnline = useOnlineStatus();
+    if(userOnline === false) {
+        return (
+            <h1>Please check your internet connection. Seems you have a glitch !!!</h1>
+        );
+    }
     return listOfRestaurant.length === 0 ? <Shimmer/> :(
         <div className="body">
             <div className="filter">
