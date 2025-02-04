@@ -146,3 +146,17 @@ and sit over here.
 98. For these, we need to import "lazy" and a named component "Suspense" from react.
 99. with help of lazy - our component will only get loaded when needed and not with the page load.
 100. We can also pass a fallback to <Suspense> component. Till our grocery page loads, it will show what ever we pass in the fallback. We can pass any component, lets say ever shimmerUI in to it. Because, fallback takes a jsx.
+101. ## EP - 10 - Using CSS in to our site
+102. - Styled components is one which can be used -> Search for the below UI frameworks/libraries-:
+103. -styled-components.com
+104. chakra UI
+105. Bootstrap
+106. Tailwind
+107. ant design
+107. **Tailwind.css** -: 
+108. Added tailwind to our application, but skipped the episode as need to learn the main concepts first.
+109. ## EP - 11 - Data is the new oil
+110. **HOC** - Higher order component - Its a component, that takes a component and returns a component. --> It takes as input a component, enhances
+its features by adding some more in to it and returns it. It basically works as an enhancer.
+111. HOC are **pure component**, meaning we are not changing the authenticity of the component/function. We are only adding extra feature, and not toucing the exisiting functionality of the component.
+112. Created a HOC "withLocalityLabel" in the RestaurantCard js component and used it in Body js.

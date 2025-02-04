@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withLocalityLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -8,7 +8,10 @@ const Body = () => {
     const[listOfRestaurant, setlistOfRestaurant]=useState([]);
     const [searchText, setsearchText] = useState("");
     const [filteredSearch, setfilteredSearch] = useState([]);
+
+    const RestaurantCardLocality = withLocalityLabel(RestaurantCard);
     
+    console.log(listOfRestaurant);
     useEffect(() => {
         fetchData()
     }, []);
@@ -54,10 +57,18 @@ const Body = () => {
                     }}
                 >Search</button>
             </div>
+            {/*based on condition, we render the HOC in this block*/}
             <div className="res-container res-card-wrapper d-flex">
                 {
                     filteredSearch.map((restaurant) => (
-                        <Link to={"/restaurant/" + restaurant.info.id} key = {restaurant.info.id} className="card d-flex"><RestaurantCard resData={restaurant}/></Link>
+                        <Link to={"/restaurant/" + restaurant.info.id} 
+                              key = {restaurant.info.id} 
+                              className="card d-flex">
+                                {restaurant.info.locality === 'Whitefield' ? (
+                                    <RestaurantCardLocality resData={restaurant}/>
+                                    ): (<RestaurantCard resData={restaurant}/>)
+                                }
+                        </Link>
                     ))
                 }
             </div>
