@@ -58,7 +58,9 @@ ALSO -> React doesnt recommend to use indexes as key. This is anti-parten.
 49. Monolith architecture
 50. Micro services. Separation of concerns or Single responsibility principle.
 51. useEffect hook - 2 argument - 1. callback function, dependency array. UE call back happens only after the component is rendered.
-52. In useState, we declare the initial variable with 'const', but we change it through the set() ? Because, when the value is changed, react re-renders the entire component, hence the varriable is newly created. Its not changing it, rather creating a new variable,hence it works. All this is handled by react iteself. ***IMP***
+52. In useState, we declare the initial variable with 'const', but we change it through the set() ? Because, when the value is changed,
+    react re-renders the entire component, hence the varriable is newly created. Its not changing it, rather creating a new variable,
+    hence it works. All this is handled by react iteself. ***IMP***
 53. Search functionality - use diff state variable to render the search results to populate instead of using the initial state variable.
 54. login and logout button using state variable.
 55. ## EP-7 -:
@@ -78,7 +80,9 @@ make any network call, since all the components are loaded during the initial pa
 and sit over here.
 2> Server side routing - Here we make a network call, fetch the data and put on those data in to this page. So the entire page reloads.
 67. Hence Single page Application is nothing but, client side routing.
-68. Created RestaurantMenu component - A page which shows the menu of the restaurant selected. This will call the API and have the resid passed to it. Used useEffect hook for API call, useState hook to iterate over the menu, useParam hook to fetch the parameter passed through url eg: resID from App js file. Took the API and put it in constant js. fetching it through MENU_API const.
+68. Created RestaurantMenu component - A page which shows the menu of the restaurant selected. This will call the API and have the resid passed 
+    to it. Used useEffect hook for API call, useState hook to iterate over the menu, useParam hook to fetch the parameter passed through url 
+    eg: resID from App js file. Took the API and put it in constant js. fetching it through MENU_API const.
 69. In Body component, used Link To from react-router-dom to link the restaurant card to the respective menu page uplon clicking it and passing the restaurant id through param.
 70. ## EP - 8 -:
 71. class component - In class based component-import React. use the keyword "class", give a name to component, this extends from react component so react know its a component.It has a render(), with in this we have the same return which returns a piece of JSX. At the end we export it.
@@ -156,7 +160,15 @@ and sit over here.
 107. **Tailwind.css** -: 
 108. Added tailwind to our application, but skipped the episode as need to learn the main concepts first.
 109. ## EP - 11 - Data is the new oil
-110. **HOC** - Higher order component - Its a component, that takes a component and returns a component. --> It takes as input a component, enhances
+110. **HOC - Higher order component** - Its a component, that takes a component and returns a component. --> It takes as input a component, enhances
 its features by adding some more in to it and returns it. It basically works as an enhancer.
 111. HOC are **pure component**, meaning we are not changing the authenticity of the component/function. We are only adding extra feature, and not toucing the exisiting functionality of the component.
 112. Created a HOC "withLocalityLabel" in the RestaurantCard js component and used it in Body js.
+113. Further creating the catrgories of Menu in restaurant, by filtering from the API data of restaurant. Like eg: recommended, beverages, tandoor items etc.
+     and this would have the related items beneth it.
+114. --Lifting state up 1:10 time of the episode video
+115. -- **controlled and un-controlled components.** --> When the component is having its own state variable and its parent doesnt have control  over it then, its called an un-controlled component. So, lets now take that state up to its parent component(from where its called) and pass
+        the state through props and accordingly do changes on the child from parent, then the child component is called as a controlled component.
+        Since, its getting controlled by its parent.
+        Also, the process of taking the state out of child component to its parent component and passing it through props is a process known as **lifting the state up**
+116. 
