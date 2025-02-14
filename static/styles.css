@@ -42,9 +42,7 @@ ul li {list-style: none;margin: 5px;padding: 5px;}
     background-color: lightgrey;
 }
 button {
-    width: 100px;
     border: 1px solid cornflowerblue;
-    color: blue;
     cursor: pointer;
 }
 .mr-10{margin-right: 10px;}

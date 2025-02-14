@@ -1,13 +1,14 @@
-import { useState } from "react";
+//import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data })=> {
-
-    const [showItems, setShowItems] = useState(false); // Simple state varriable to handle show/hide menu items
+const RestaurantCategory = ({ data, showItems, SetShowIndex })=> {
+    {/*We lifted this state up to its parent*/}
+    //const [showItems, setShowItems] = useState(false); // Simple state varriable to handle show/hide menu items
     //console.log(data);
     //function to toggle the menu items. So if showitems is true, make it false and vice-versa. This is how we build toggle fucntionality.
     const HandleClick = () => {
-        setShowItems(!showItems);
+        //setShowItems(!showItems);
+        SetShowIndex();
     }
     return (
         <div>

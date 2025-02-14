@@ -171,4 +171,23 @@ its features by adding some more in to it and returns it. It basically works as 
         the state through props and accordingly do changes on the child from parent, then the child component is called as a controlled component.
         Since, its getting controlled by its parent.
         Also, the process of taking the state out of child component to its parent component and passing it through props is a process known as **lifting the state up**
-116. 
+116. **Concept of lifting state up** done inside RestaurantMenu component (parent) and RestaurantCategory component (child) -:
+     Instead of having its own state in the child,we lifted it to be in the parent. This made the child a controlled component.
+     Next,we wanted to controll from parent, so we passed the SetShowIndex as a function through props to children with parameter as index.
+     Then inside the children,upon clicking the category head, we simply called the function. This induces the current index. This is how we
+     should explain the lifting state up and controlled and uncontrolled component.
+117. **React context** -- Lets think of a data which we need through out the application. Eg: Logged in user info, theme - like light/dark theme
+       userContext, context provider, userContext.consumer for class based.
+118. ### Creation of context -:
+     Create a context using **createContext** which comes from react library (import it). This we did in a new file - **UserContext.js**
+119. ### Reading/accessing the context -:
+     Access/read the context using **useContext hook**, by importing it from react lib. Just used it in header. Can be used in any files.
+120. **Accesing the context inside class based component** - in About us.js - Here we dont have hooks, hence we need to use a component - 
+     **<UserContext.Consumer>** our context data </UserContext.Consumer> --> When ever a context is created, react automatically creates a .consumer for it. It uses a call back function, which passes the data. EG. {(data)=>console.log(data)}
+121. ### Modifying the context -:
+     To update, we need provider- <UserContext.provider> </UserContext.provider>
+     We need to wrap the component with in the UseContext.provider and pass the updated context in the value. Check in App.js file
+122. ### Updating the context value -:
+     To update the context value on the fly - We passed the setUserName state function from the App.js through context.provider. We caught it
+     in the Body js. Now useing SetUserName, we updated the context value.
+

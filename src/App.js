@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDom from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import {useRouteError} from "react-router"
@@ -8,17 +8,33 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 //import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"))
 
 const AppLayout = () => {
+  //Suppose we have a state variable, through which using a API data, we need to change our context.
+
+  const [userName, SetUserName] = useState();
+
+  // Lets assume we get data through API
+  useEffect(()=>{
+    //Assume API call is made here and we received data
+    const data = {
+      name: "Soumyesh Panda",
+    };
+    SetUserName(data.name);
+  },[]);
+  //Using UserContext.provider we are modifying the context data. Now in entire app we will have this updated data.
   return (
-    <div className="app">
-      <Header/>
-      {/*So now with outlet, we can remove the body component from here. This is added below in the createBrowserRouter routes config as children. SO when that page is opened, the header and footer will come for it.*/}
-      <Outlet/>
-    </div>
+    <UserContext.Provider value={{loggedInUser: userName, SetUserName}}>
+      <div className="app">
+        <Header/>
+        {/*So now with outlet, we can remove the body component from here. This is added below in the createBrowserRouter routes config as children. SO when that page is opened, the header and footer will come for it.*/}
+        <Outlet/>
+      </div>
+    </UserContext.Provider>
   )
 };
 

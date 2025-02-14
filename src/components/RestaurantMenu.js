@@ -2,8 +2,10 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
+    const [showIndex, SetShowIndex] = useState(0);
     const { resId } = useParams();
     const restaurantInfo = useRestaurantMenu(resId);
 
@@ -34,8 +36,13 @@ const RestaurantMenu = () => {
             </ul>
             */}
             {/*Now we will map over the filtered catogories*/}
-            {categories.map((category)=> 
-                <RestaurantCategory key={category?.card?.card.categoryId} data = {category?.card?.card}/>
+            {categories.map((category, index)=> 
+                <RestaurantCategory
+                    key={category?.card?.card.categoryId}
+                    data = {category?.card?.card}
+                    showItems = {index == showIndex ? true : false}
+                    SetShowIndex = {() => SetShowIndex(index)}
+                />
             )}
         </div>
     )

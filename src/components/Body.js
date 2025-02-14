@@ -1,8 +1,9 @@
 import RestaurantCard, {withLocalityLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const[listOfRestaurant, setlistOfRestaurant]=useState([]);
@@ -24,6 +25,9 @@ const Body = () => {
         setfilteredSearch(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
     const userOnline = useOnlineStatus();
+    //to detch the SetuserName from userContext
+
+    const { loggedInUser, SetUserName } = useContext(UserContext);
     if(userOnline === false) {
         return (
             <h1>Please check your internet connection. Seems you have a glitch !!!</h1>
@@ -31,9 +35,9 @@ const Body = () => {
     }
     return listOfRestaurant.length === 0 ? <Shimmer/> :(
         <div className="body">
-            <div className="d-flex items-center justify-between w-6/12 mx-auto mb-5">
+            <div className="d-flex items-center justify-between w-8/12 mx-auto mb-5">
                 <div className="filter w-sm">
-                    <button
+                    <button className="px-4 bg-sky-500 hover:bg-sky-700 text-white"
                         onClick={()=>{
                             const filteredList = listOfRestaurant.filter(
                                 (res) => res.info.avgRating > 4.2
@@ -44,19 +48,28 @@ const Body = () => {
                         Top Rated restaurants
                     </button>
                 </div>
-                <div className="search-wrapper">
+                <div className="search-wrapper d-flex mr-10">
                     <input type="text" className="search-box mr-10 border border-gray" value={searchText}
                         onChange={(e)=>{
                             setsearchText(e.target.value);
                         }}
                     />
                     
-                    <button
+                    <button className="w-auto px-4 bg-sky-500 hover:bg-sky-700 text-white"
                         onClick={()=>{
                             const filteredSearchList = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                             setfilteredSearch(filteredSearchList); 
                         }}
                     >Search</button>
+                </div>
+                
+                {/*Adding a input box to update the context data on the fly*/}
+
+                <div className="context-update d-flex">
+                    <label className="mr-5">UserName: </label>
+                    <input type="text" className="search-box mr-10 border border-gray" value={loggedInUser}
+                        onChange={(e)=> SetUserName(e.target.value)}
+                    />
                 </div>
             </div>
     
