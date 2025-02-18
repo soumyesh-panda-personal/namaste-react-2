@@ -189,5 +189,42 @@ its features by adding some more in to it and returns it. It basically works as 
      We need to wrap the component with in the UseContext.provider and pass the updated context in the value. Check in App.js file
 122. ### Updating the context value -:
      To update the context value on the fly - We passed the setUserName state function from the App.js through context.provider. We caught it
-     in the Body js. Now useing SetUserName, we updated the context value.
+     in the Body js. Now useing SetUserName, we updated the context value.'
+123. ## EP-12 --> ## Redux -:
+124. **redux is not mandatory** - Use it only if it's really required.
+125. Redux is separate library which we can use in react. Its not the only library that can be used for state management. For eg: there is 
+     zusland.
+126. Redux is used primarily for state management. Everything, that can be done with redux, can be done through context.
+127. Redux Tool Kit - **RTK** 
+     -- Install libraries - @reduxjs/toolkit and react-redux
+     -- Build our store
+     -- Connect our store to the app
+     -- Slice (cart slice)
+     -- dispatch(action)
+     -- Selector
+128. Libraries are installed and will start now - 0:44 in video
+129. Step-1 - Create our app store (redux store) in utils.
+     ## Provider -- Step-2 - Provide the store to the application. --> This is done in the root level. We wrap full application with in provider,
+     that means, in the app.js
+     Step-3 - Start creating slices. Eg. cart slice. We can create a separate folder for all slices, but for now we keep it with in utils.
+              We create using creatSlice. file we created is CartSlice.js
+130. In the cartSlice file, we created **action and reducers**. adding prod, removing prod, these are the actions which we perform. With in the
+     appStore. This is our store basically, which is having our main reducer. Which internaly calls the reducer functions available in the slice.
+131. When ever we are using useSelector or we are subscribing to a store, make sure we'r selecting just the intended store item and not all of it.
+     This creates a huge impact on performance. For eg: in Cart.js , we are subscribing only for the cart items in the useSelector.
+     The name itself is selector, basic mean we need to select the required portion of the store. Also, if any thing happens to any data
+     of store, had we have not selected intended store item and gone for entire store, then every where it will impact.
+132. In the older version of redux, it was informed to not mutate the state and returning was mandatory. **However**, in the new redux toolkit
+     we have to mutate the state. Redux still does that behind the scenes. It actually creates an immutable state for the same.
+133. All the above is getting done by **Immer** library. Redux uses this, to find the original state, the mutated state and creates a new state
+     for the same.
+134. Inside **clearCart**, if we do like state = [], then its only the local state variable which becomes empty, but the original state variable
+     will still have the data. Hence we should do as is done in cartSlice js, that is we mutate it and make the length as 0.
+     Other way of doing is to return and empty object. EG: return { items: [] }. This will create a new state and override the original state.
+135. **redux dev tool** is the extension, that helps us to debug the redux code.
+136. Read about **RTK querry** - https://redux-toolkit.js.org/tutorials/rtk-query
+137. 
 
+
+
+     

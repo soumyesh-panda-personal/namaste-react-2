@@ -10,6 +10,9 @@ import Error from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 //import Grocery from "./components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const Grocery = lazy(() => import("./components/Grocery"))
 
@@ -27,14 +30,17 @@ const AppLayout = () => {
     SetUserName(data.name);
   },[]);
   //Using UserContext.provider we are modifying the context data. Now in entire app we will have this updated data.
+  // Redux - wrapped all with in provider and passed the store as a props to it. If only few components need the the store, only wrap those with in Provider.
   return (
-    <UserContext.Provider value={{loggedInUser: userName, SetUserName}}>
-      <div className="app">
-        <Header/>
-        {/*So now with outlet, we can remove the body component from here. This is added below in the createBrowserRouter routes config as children. SO when that page is opened, the header and footer will come for it.*/}
-        <Outlet/>
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{loggedInUser: userName, SetUserName}}>
+        <div className="app">
+          <Header/>
+          {/*So now with outlet, we can remove the body component from here. This is added below in the createBrowserRouter routes config as children. SO when that page is opened, the header and footer will come for it.*/}
+          <Outlet/>
+        </div>
+      </UserContext.Provider>
+    </Provider>
   )
 };
 
@@ -62,6 +68,10 @@ const appRouter = createBrowserRouter([
             <Grocery/>
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
       },
       {
         path: "/restaurant/:resId",

@@ -27,7 +27,7 @@ class About extends React.Component {
     render() {
         console.log("parent render");
         return (
-            <div className="About-wrapper wrapper justify-center">
+            <div className="About-wrapper wrapper justify-center pt-35">
                 <h1>This is About us Page</h1>
                 {/*Accesing the context below*/}
                 <div>

@@ -34,7 +34,7 @@ const Body = () => {
         );
     }
     return listOfRestaurant.length === 0 ? <Shimmer/> :(
-        <div className="body">
+        <div className="body pt-30">
             <div className="d-flex items-center justify-between w-8/12 mx-auto mb-5">
                 <div className="filter w-sm">
                     <button className="px-4 bg-sky-500 hover:bg-sky-700 text-white"

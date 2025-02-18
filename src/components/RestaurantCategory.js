@@ -12,7 +12,7 @@ const RestaurantCategory = ({ data, showItems, SetShowIndex })=> {
     }
     return (
         <div>
-            <div className="w-6/12 mx-auto shadow-lg bg-gray-50 p-3 mb-5">
+            <div className="w-6/12 mx-auto shadow-lg bg-gray-30 p-3 mb-5">
                 <div className="accordian-header d-flex justify-between cursor-pointer" onClick={HandleClick}>
                     {/*accordian header*/}
                     <span className="font-extrabold">{data.title} ({data.categories.length})
